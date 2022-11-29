@@ -57,8 +57,8 @@ struct pcb_t *get_mlq_proc(void)
 	{
 		if (!empty(&mlq_ready_queue[prio]))
 		{
-			proc = dequeue(&mlq_ready_queue[prio]);
 			// enqueue(&mlq_ready_queue[prio], dequeue(&mlq_ready_queue[prio]));
+			proc = dequeue(&mlq_ready_queue[prio]);
 			break;
 		}
 	}
