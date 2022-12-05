@@ -12,7 +12,6 @@ void enqueue(struct queue_t *q, struct pcb_t *proc)
 	/* TODO: put a new process to queue [q] */
 	if (q->size < MAX_QUEUE_SIZE)
 	{
-		q->proc[q->size] = (struct pcb_t *)malloc(sizeof(struct pcb_t));
 		q->proc[q->size] = proc;
 		q->size++;
 	}
@@ -35,8 +34,8 @@ struct pcb_t *dequeue(struct queue_t *q)
 				max_i = i;
 			}
 		}
-		// struct pcb_t *maxPCB = (struct pcb_t *)malloc(sizeof(struct pcb_t));
-		struct pcb_t *maxPCB = q->proc[max_i];
+		struct pcb_t *maxPCB = (struct pcb_t *)malloc(sizeof(struct pcb_t));
+		maxPCB = q->proc[max_i];
 
 		for (int i = max_i; i < q->size - 1; i++)
 		{
