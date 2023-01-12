@@ -189,11 +189,11 @@ addr_t alloc_mem(uint32_t size, struct pcb_t *proc)
 		}
 		_mem_stat[avail_physical_index[loop - 1]].next = -1; // the last element's next field is -1
 	}
-	if (1)
-	{
-		puts("=================Allocate================");
-		dump();
-	}
+	// if (1)
+	// {
+	// 	puts("=================Allocate================");
+	// 	dump();
+	// }
 	// if you want to show memory actions
 	pthread_mutex_unlock(&mem_lock);
 	return ret_mem;
@@ -235,11 +235,11 @@ int free_mem(addr_t address, struct pcb_t *proc)
 		if (frame_index == -1)
 			break;
 	}
-	if (1)
-	{
-		puts("================Deallocate================");
-		dump();
-	}
+	// if (1)
+	// {
+	// 	puts("================Deallocate================");
+	// 	dump();
+	// }
 	// if you want to show memory actions
 	pthread_mutex_unlock(&mem_lock);
 	return allow_to_free;
